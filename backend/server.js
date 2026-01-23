@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import authRoutes from "./routes/auth.routes.js";
 import productRoutes from "./routes/product.route.js";
 import cartRoutes from "./routes/cart.routes.js";
+import couponRoutes from "./routes/coupon.routes.js";
 import connectDB from "./lib/db.js";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/coupons", couponRoutes);
 
 app.listen(PORT, ()=> {
     console.log(`Server running @ PORT ${PORT}`);
