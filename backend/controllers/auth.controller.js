@@ -136,5 +136,10 @@ export async function refreshToken(req, res) {
 }
 
 export async function getProfile(req,res) {
-    
+    try {
+        res.json(req.user);
+    } catch (error) {
+        console.log("Error @ getProfile - auth controller", error.message);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
 }
