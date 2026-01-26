@@ -42,6 +42,17 @@ export const useUserStore = create((set,get) => ({
     } catch (error) {
         toast.error(error.response.data.message || "Error when logging in");
     }
+  },
+
+  logout: async () => {
+    set({isLoading:true});
+    try {
+        await axios.post("/logout");
+        set({user:null, isLoading:false});
+    } catch (error) {
+        set({isLoading:false});
+        toast.error("Error when logging out!")
+    }
   }
 
 }));
