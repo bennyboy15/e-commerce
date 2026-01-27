@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { UserPlus, Mail, Lock, User, ArrowRight, Loader } from "lucide-react";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import { useUserStore } from '../stores/useUserStore.js';
+=======
+import {useUserStore} from "./stores/useUserStore.js";
+>>>>>>> 16172f9810d80b8075e3f74d72090dbb7402cd78
 
 function SignupPage() {
   
@@ -13,7 +17,12 @@ function SignupPage() {
 		password: "",
 		confirmPassword: "",
 	});
+<<<<<<< HEAD
 	const {signup, user, loading} = useUserStore();
+=======
+
+	const {signup, isLoading, user} = useUserStore();
+>>>>>>> 16172f9810d80b8075e3f74d72090dbb7402cd78
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -132,9 +141,9 @@ function SignupPage() {
 							rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600
 							 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2
 							  focus:ring-emerald-500 transition duration-150 ease-in-out disabled:opacity-50'
-							disabled={loading}
+							disabled={isLoading}
 						>
-							{loading ? (
+							{isLoading ? (
 								<>
 									<Loader className='mr-2 h-5 w-5 animate-spin' aria-hidden='true' />
 									Loading...
@@ -150,7 +159,7 @@ function SignupPage() {
 
 					<p className='mt-8 text-center text-sm text-gray-400'>
 						Already have an account?{" "}
-						<Link to='/login' className='font-medium text-emerald-400 hover:text-emerald-300'>
+						<Link to='/login' className='relative z-50 font-medium text-emerald-400 hover:text-emerald-300'>
 							Login here <ArrowRight className='inline h-4 w-4' />
 						</Link>
 					</p>
