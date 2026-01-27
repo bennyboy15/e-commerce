@@ -1,5 +1,5 @@
 import Product from "../models/product.model.js";
-import { redis } from "../lib/redis.js";
+import redis from "../lib/redis.js";
 import cloudinary from "../lib/cloudinary.js";
 
 const FEATURED_PRODUCTS_KEY="featured_products";
